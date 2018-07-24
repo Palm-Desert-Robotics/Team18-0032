@@ -1,0 +1,8 @@
+enable_servos();  > enables servos to work 
+
+
+set_servo_position(port number,1136);  > open claw
+msleep(1000);
+
+set_servo_position(port number,1630):  > close claw
+msleep(1000);
