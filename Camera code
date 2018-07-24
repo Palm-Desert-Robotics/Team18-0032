@@ -1,0 +1,29 @@
+   
+   
+   > camera code 
+   
+   
+   while(1 == 1)
+    {
+        camera_update();
+        if(get_object_center_x(0,0) > 77 && get_object_center_x(0,0) < 83)
+        {
+            break;
+        }
+        else
+        {
+            if(analog(5) > 3700)
+            {
+                mav(0,-750);
+                mav(2,-250);
+            }
+            else
+            {
+                if(analog(5) < 3700)
+                {
+                    mav(0,-250);
+                    mav(2,-750);
+                }
+            }
+        }
+    }
