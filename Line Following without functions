@@ -1,0 +1,19 @@
+#include <kipr/botball.h>
+
+int main()
+{
+	while(1 == 1)
+{
+	if(analog(0) > 1500)
+	{
+		mav(0, 300);//turn left
+    mav(2, 500);
+	}
+	else
+	{
+		mav(0, 500);//turn right
+    mav(2, 300);
+	}
+}
+
+}
