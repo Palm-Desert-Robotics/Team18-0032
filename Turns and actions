@@ -1,0 +1,13 @@
+> This shows you how to move forward and turn
+
+mav(0,1000);
+mav(2,1000);      > forward
+msleep(2000);
+
+mav(0,-1000);
+mav(2,-1000);     > backward
+msleep(2000); 
+
+mav(0,-1000);
+mav(2,1000);      > turn in a certain direction depending on which ports the motors are plugged into
+msleep(2000);
