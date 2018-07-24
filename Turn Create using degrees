@@ -1,0 +1,19 @@
+int main ()
+{
+int p = 0;
+set_create_total_angle(0);
+
+printf("Create set angle is %d\n", get_create_total_angle());
+
+while (abs(get_create_total_angle()) < (int) angle)
+{
+printf("Create angle is %d\n", abs(get_create_total_angle()));
+create_drive_direct(-200, 200);//turning left, to turn right change speeds
+}
+
+p = get_create_total_angle();
+
+printf("Create stop angle is %d\n", p);
+
+create_stop();
+}
