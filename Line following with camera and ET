@@ -1,0 +1,186 @@
+
+
+> Grab yellow crates using camera and ET sensor
+
+
+    int counter = 0;
+    int counter1 = 0;
+    int counter3 = 0;
+    int counter4 = 0;
+
+    printf("Hello World\n");
+
+    camera_open();
+
+    enable_servos();
+    /*  
+    set_servo_position(0,670);
+    msleep(500);
+
+    set_servo_position(2,1000);
+    msleep(500);
+
+    //black line start
+    mav(0,1000);
+    mav(2,900);
+    msleep(2000);
+
+    while(analog(2) < 3700)
+    {
+        mav(0,1000);
+        mav(2,900);  
+    }
+
+    while(1 == 1)
+    {
+        if(analog(4) > 2000)
+        {
+            break;
+        }
+        if(analog(2) > 3700)
+        {
+            mav(0,750);
+            mav(2,0);
+        }
+        else
+        {
+            if(analog(2) < 3700)
+            {
+                mav(0,0);
+                mav(2,750);
+            }
+        }
+    }
+    //black line end
+
+    //grab yellow blocks start
+    while(analog(4) > 1450)
+    {
+        mav(0,-200);
+        mav(2,-90);
+    }
+    ao();
+
+    set_servo_position(0,1900);
+    msleep(2000);
+
+    set_servo_position(2,500);
+    msleep(500);
+
+    //grab yellow blocks end
+
+    mav(0,-800);
+    mav(2,-800);
+    msleep(2800);
+
+    set_servo_position(0,1850);
+    msleep(500);
+
+    while(analog(2) < 3700)
+    {
+        mav(0,1000);
+        mav(2,500);  
+    }
+
+    while(counter < 300)
+    {
+        if(analog(2) > 3700)
+        {
+            mav(0,750);
+            mav(2,250);
+            msleep(25);
+        }
+        else
+        {
+            if(analog(2) < 3700)
+            {
+                mav(0,250);
+                mav(2,750);
+                msleep(25);
+            }
+        }
+        counter = counter +1;
+    }
+
+    while(1 == 1)
+    {
+        camera_update();
+        if(get_object_center_x(0,0) > 77 && get_object_center_x(0,0) < 83)
+        {
+            break;
+        }
+        else
+        {
+            if(analog(5) > 3700)
+            {
+                mav(0,-750);
+                mav(2,-250);
+            }
+            else
+            {
+                if(analog(5) < 3700)
+                {
+                    mav(0,-250);
+                    mav(2,-750);
+                }
+            }
+        }
+    }
+    mav(0,500);
+    mav(2,-500);
+    msleep(2000);
+
+    mav(0,500);
+    mav(2,500);  
+    msleep(3200);
+    ao();
+
+    set_servo_position(0,1900);
+    msleep(100);
+
+    set_servo_position(2,1000);
+    msleep(1000);
+
+    set_servo_position(0,1650);
+    msleep(1000);
+
+    set_servo_position(2,500);
+    msleep(1000);
+
+    set_servo_position(0,1400);
+    msleep(1000);
+
+    mav(0,-500);
+    mav(2,0);
+    msleep(1500);
+    ao();
+
+    mav(0,500);
+    mav(2,500);
+    msleep(1000);
+
+    ao();
+
+    set_servo_position(0,1800);
+    msleep(500);
+
+    set_servo_position(2,1000);
+    msleep(500);
+
+    mav(0,-500);
+    mav(2,-500);
+    msleep(1000);
+
+    set_servo_position(0,1000);
+    msleep(500);
+
+    disable_servos();
+
+    camera_close();
+
+
+
+
+
+
+
