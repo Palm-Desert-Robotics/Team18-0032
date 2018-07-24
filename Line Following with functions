@@ -1,0 +1,49 @@
+#include <kipr/botball.h>
+
+//functions
+void turnleft();
+void turnright();
+
+//motor ports
+int leftmotor = 0;
+int rightmotor = 2;
+
+//motor values
+int highspeed = 500;
+int lowspeed = 300;
+
+//sensor ports
+int tophat = 0;
+
+//top hat sensor values
+int black = 2000;
+Int white = 1000;
+Int medium = 1500;
+
+//starts program
+int main()
+{
+	while(1 == 1)
+{
+	if(analog(tophat) > medium)
+	{
+		turnleft();
+	}
+	else
+	{
+		turnright();
+	}
+}
+}
+
+void turnleft()
+{
+	mav(leftmotor,highspeed);
+	mav(rightmotor,lowspeed);
+}
+
+void turnright()
+{
+	mav(leftmotor,lowspeed);
+	mav(rightmotor,highspeed);
+}
