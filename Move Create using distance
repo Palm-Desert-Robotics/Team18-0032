@@ -1,0 +1,21 @@
+int main ()
+{
+int distance = 62.5; //set distance in mm here
+int p = 0;
+set_create_distance((int) distance);
+
+printf("Set Create distance is %d\n", get_create_distance);
+printf("I am in reverse distance \n");
+printf("move distance %f\n", distance);
+
+while (get_create_distance() >= 0)
+{
+printf("Create distance is %d\n", get_create_distance());
+create_drive_direct(200, 200);//can also make speeds negative to go backwards
+}
+
+p = get_create_distance();
+printf("Create stop distance is %d\n", p);
+
+create_stop();
+}
